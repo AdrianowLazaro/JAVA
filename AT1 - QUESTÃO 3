@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class CalculaSalario {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o número de horas trabalhadas: ");
+        double horasTrabalhadas = scanner.nextDouble();
+        
+        System.out.print("Digite o valor pago por hora: ");
+        double valorPorHora = scanner.nextDouble();
+        
+        double salario = horasTrabalhadas * valorPorHora;
+        
+        DecimalFormat df = new DecimalFormat("#.00");
+        String salarioFormatado = df.format(salario);
+        
+        System.out.println("O salário do funcionário é: R$ " + salarioFormatado);
+        
+        scanner.close();
+    }
+}
