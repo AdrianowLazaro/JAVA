@@ -1,0 +1,20 @@
+import javax.swing.JOptionPane;
+import java.time.LocalDate;
+
+public class InformacoesPessoa {
+    public static void main(String[] args) {
+        int anoAtual = LocalDate.now().getYear();
+
+        String nome = JOptionPane.showInputDialog(null, "Digite seu nome:");
+
+        String inputAnoNascimento = JOptionPane.showInputDialog(null, "Digite seu ano de nascimento:");
+        
+        int anoNascimento = Integer.parseInt(inputAnoNascimento);
+
+        int idade = anoAtual - anoNascimento;
+
+        String mensagem = "Você se chama " + nome + " e possui " + idade + " anos de idade!";
+
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+}
