@@ -1,0 +1,27 @@
+import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
+
+public class AplicarDesconto {
+    public static void main(String[] args) {
+        String nomeProduto = JOptionPane.showInputDialog(null, "Digite o nome do produto:");
+
+        String inputValorProduto = JOptionPane.showInputDialog(null, "Digite o valor do produto:");
+        double valorProduto = Double.parseDouble(inputValorProduto);
+
+        String inputDesconto = JOptionPane.showInputDialog(null, "Digite o percentual de desconto:");
+        double percentualDesconto = Double.parseDouble(inputDesconto);
+
+        double desconto = (percentualDesconto / 100) * valorProduto;
+
+        double valorComDesconto = valorProduto - desconto;
+
+        DecimalFormat df = new DecimalFormat("#.###");
+        String valorProdutoFormatado = df.format(valorProduto);
+        String valorComDescontoFormatado = df.format(valorComDesconto);
+
+        String mensagem = String.format("Produto: %s\nValor original: R$ %s\nValor com desconto: R$ %s",
+                nomeProduto, valorProdutoFormatado, valorComDescontoFormatado);
+
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+}

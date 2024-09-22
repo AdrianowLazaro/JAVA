@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
+
+public class AreaDoCirculo {
+    public static void main(String[] args) {
+        String input = JOptionPane.showInputDialog(null, "Digite o valor do raio do círculo:");
+
+        double raio = Double.parseDouble(input);
+
+        double area = Math.PI * Math.pow(raio, 2);
+
+        DecimalFormat df = new DecimalFormat("#.####");
+        String areaFormatada = df.format(area);
+
+        JOptionPane.showMessageDialog(null, "A área do círculo é: " + areaFormatada);
+    }
+}
